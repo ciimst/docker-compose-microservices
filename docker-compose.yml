@@ -1,0 +1,36 @@
+#Son Kullanılan DockerCompose Dosyası
+version: '3.3'
+  
+services:
+
+  currency-conversion:
+     image: currency-conversion
+     restart: always
+     container_name: currency-conversion
+     build:
+       context: .
+       dockerfile: Dockerfile-CC
+     ports:       
+       - "8100:8100"
+       - "1022:22"
+     networks:
+       - transfer-market
+     hostname: currency-conversion
+        
+  currency-exchange :
+     image: currency-exchange
+     restart: always
+     container_name: currency-exchange     
+     build:
+       context: .
+       dockerfile: Dockerfile-CE
+     ports:
+       - "8000:8000"       
+       - "1023:22"
+     networks:
+       - transfer-market
+     hostname: currency-exchange
+
+networks:
+  transfer-market:
+    driver: bridge

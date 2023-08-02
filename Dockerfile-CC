@@ -1,0 +1,6 @@
+FROM openjdk:8
+
+COPY CurrencyConversionProject/target/currency-conversion-1.jar currency-conversion.jar
+
+EXPOSE 8100
+ENTRYPOINT ["java","-jar","currency-conversion.jar"]
