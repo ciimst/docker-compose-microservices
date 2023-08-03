@@ -4,33 +4,18 @@ stage('Email Notification'){
     Ayse''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'aysayparcasi@gmail.com'
     echo 'e-mail OK!'
 }
+
 pipeline {
     agent any
     tools{
         maven "maven 3.5.0"
     }
+	
     stages{   
-      
-                stage("verify tooling") {
-             steps {
-                sh '''
-				
-                  docker version
-                  docker info
-
-
-                '''
-				}
-      }
-
-        
           stage('docker-compose-microservices') {
            steps {
-              sh "docker-compose up"
-		   
-             
+              sh "docker-compose up -d"
            }
        }
-
 }
 }
