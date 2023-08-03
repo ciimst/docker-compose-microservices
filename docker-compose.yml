@@ -9,7 +9,7 @@ services:
      container_name: currency-conversion
      build:
        context: .
-       dockerfile: Dockerfile-CC
+       dockerfile: CurrencyConversionProject/Dockerfile-CC
      ports:       
        - "8100:8100"
        - "1022:22"
@@ -23,7 +23,7 @@ services:
      container_name: currency-exchange     
      build:
        context: .
-       dockerfile: Dockerfile-CE
+       dockerfile: CurrencyExchangeProject/Dockerfile-CE
      ports:
        - "8000:8000"       
        - "1023:22"
