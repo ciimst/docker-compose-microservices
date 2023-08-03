@@ -8,11 +8,11 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>CurrencyExchangePoject</groupId>
-	<artifactId>CurrencyExchangePoject</artifactId>
+	<groupId>CurrencyExchangeProject</groupId>
+	<artifactId>CurrencyExchangeProject</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
-	<name>CurrencyExchangePoject</name>
+	<name>CurrencyExchangeProject</name>
 	<description>Test</description>
 
 	<properties>
