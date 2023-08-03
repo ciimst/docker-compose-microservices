@@ -5,6 +5,7 @@ services:
 
   currency-conversion:
      image: currency-conversion
+     tty: true 
      restart: always
      container_name: currency-conversion
      build:
@@ -19,6 +20,7 @@ services:
         
   currency-exchange :
      image: currency-exchange
+     tty: true 
      restart: always
      container_name: currency-exchange     
      build:
