@@ -1,0 +1,18 @@
+node {
+
+    withMaven(maven:'maven') {
+
+        stage('Checkout') {
+            git url: 'https://github.com/ciimst/docker-compose-microservices.git', credentialsId: '13daaff0-994d-486d-8d1b-0f050daeeb26, branch: 'main'
+        }
+
+        stage('Build') {
+            sh 'mvn clean install'
+
+            def pom = readMavenPom file:'pom.xml'
+            print pom.version
+            env.version = pom.version
+        }
+    }
+
+}
